@@ -6,7 +6,7 @@ import FacilityManagement from './FacilityManagement';
 
 function App() {
   return (
-    <Router basename='/dronesoft.cz'>
+    <Router>
       
         <nav>
           <ul>
