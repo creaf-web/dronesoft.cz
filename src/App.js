@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import logo from './assets/logo.png';
+import Homepage from './Homepage';
+import FacilityManagement from './FacilityManagement';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename='/dronesoft.cz'>
+      
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Domů</Link>
+            </li>
+            <li>
+              <Link to="/facility-management">Facility Management</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <main>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/facility-management" element={<FacilityManagement />} />
+        </Routes>
+        </main>
+
+    </Router>
   );
 }
 
