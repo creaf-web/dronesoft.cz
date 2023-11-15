@@ -15,7 +15,7 @@ function App() {
             <div className='w-3/4 flex items-center justify-end'>
               <nav>
                 <ul className='flex'>
-                  {/*<li><Link to="/facility-management">Facility Management</Link></li>*/}
+                  <li><Link to="/facility-management">Facility Management</Link></li>
                   <li><Link to="/#vyzkousej-zdarma">Vyzkoušej zdarma</Link></li>
                   <li><Link to="/#produkty">Produkty</Link></li>
                   <li><Link to="/#kontakt">Kontakt</Link></li>
