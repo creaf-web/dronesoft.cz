@@ -7,27 +7,39 @@ function Contact() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     
     /* TODO API CALL SEND MAIL */
+    const req = await fetch("https://www.creativefriends.cz/dronesoft-mail.php", {
+      method: "POST",
+      body: JSON.stringify({ name, email, phone, message }),
+    });
+    const res = await req.text();
+    if(res==1) setIsSent(true);
   }
 
   return (
-    <section className='contact-us container mx-auto my-16'>
+    <section className='contact-us container mx-auto my-8 md:my-16'>
         <a id='kontakt' className='relative top-[-140px] invisible'></a>
         <h3 className='text-center uppercase color-green text-lg mb-8'>Napište nám</h3>
-        
-        <form className='px-4 sm:px-24' method='post' onSubmit={submitForm}>
+        {isSent && (
+          <div className='text-center'>
+            <p className='inline-block px-4 py-2 rounded-2xl shadow-lg text-center bg-darkgreen text-white font-semibold'>Formulář byl úspěšně odeslán. Děkujeme!</p>
+          </div>
+        )}
+
+        <form className={`px-4 sm:px-24 ${isSent ? 'sent' : ''}`} method='post' onSubmit={submitForm}>
             <div className='grid lg:grid-cols-2 gap-x-12 gap-y-2'>
                 <div className='order-1'>
-                    <input type='text' name='name' placeholder='jméno' value={name} onChange={(e) => setName(e.target.value)} />  
-                    <input type='email' name='email' placeholder='e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input type='tel' name='phone' placeholder='telefon' value={phone} onChange={(e) => setPhone(e.target.value)} style={{ marginBottom: 0 }} />
+                    <input type='text' name='name' placeholder='jméno' value={name} onChange={(e) => setName(e.target.value)} required />  
+                    <input type='email' name='email' placeholder='e-mail' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input type='tel' name='phone' placeholder='telefon' value={phone} onChange={(e) => setPhone(e.target.value)} style={{ marginBottom: 0 }} required />
                 </div>
                 <div className='order-2'>
-                    <textarea name='message' placeholder='zpráva' rows='4' className='h-full' value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea name='message' placeholder='zpráva' rows='4' className='h-full' value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
                 </div>
                 <div className='order-4 lg:order-3'>
                   <p className='text-sm italic hidden lg:block'>* Odesláním formuláře souhlasím se zpracováním osobních údajů.</p>

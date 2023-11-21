@@ -132,6 +132,13 @@ body::after{
   fill: var(--color-green)
 }
 
+.contact-us form.sent input,
+.contact-us form.sent textarea,
+.contact-us form.sent button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .foot {
   background-image: url(./assets/foot.svg);
   background-size: 100% auto;
@@ -210,8 +217,10 @@ h3 {
 }
 p{margin-bottom: 1rem;}
 
+.color-sand {color: var(--color-sand);}
 .color-green {color: var(--color-green);}
 .bg-sand {background-color: var(--color-sand);}
+.bg-darkgreen {background-color: var(--color-green);}
 
 @media (min-width: 1536px) {
   .container {
@@ -234,21 +243,25 @@ p{margin-bottom: 1rem;}
 }
 
 @media (max-width: 768px) {
-  #menu-wrapper {top: 20px; padding: 0 5px; z-index: 9;}
+  #menu-wrapper {top: 10px !important; padding: 0 5px; z-index: 9;}
   .menu {padding: 1rem 2rem !important;}
   .menu .logo {width: 120px;}
-  .menu nav {max-height: 0px; overflow: hidden; transition: .3s ease-out;}
+  .menu nav {max-height: 0px; overflow: hidden; transition: .4s ease-out;}
   .menu.open nav {max-height: 120px;}
   .menu nav ul li a {padding: 0.25rem; text-align: center;}
 }
 
 @media (max-width: 640px) {
   body {font-size: .9rem;}
+  body::after {background-size: 210% auto; animation: gradient-animation 240s linear infinite}
+
   h1 {font-size: 2rem; line-height: 2.25rem;}
   h2 {font-size: 1.2rem; line-height: 1.5rem;}
 
   .menu .logo {width: 80px;}
 
   .products .product h3 {font-size: .7rem;}  
+
+  .text-sm {font-size: 0.7rem;}
 }
 

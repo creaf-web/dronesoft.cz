@@ -20,6 +20,9 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     if(menuOpen){
@@ -50,9 +53,9 @@ function App() {
             
               <nav className='w-full md:w-3/4 md:flex items-center justify-end'>
                 <ul className='md:flex mt-4 md:mt-0'>
-                  <li><a href="/#vyzkousej-zdarma">Vyzkoušej zdarma</a></li>
-                  <li><a href="#produkty">Produkty</a></li>
-                  <li><a href="#kontakt">Kontakt</a></li>
+                  <li><a href="/#vyzkousej-zdarma" onClick={closeMenu}>Vyzkoušej zdarma</a></li>
+                  <li><a href="#produkty" onClick={closeMenu}>Produkty</a></li>
+                  <li><a href="#kontakt" onClick={closeMenu}>Kontakt</a></li>
                 </ul>
               </nav>
               <HiBars3BottomRight 
@@ -63,7 +66,7 @@ function App() {
           </div>
         </div>
         
-        <main className='pt-[100px] sm:pt-[120px] md:pt-[160px]'>
+        <main className='pt-[90px] sm:pt-[110px] md:pt-[160px]'>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/facility-management" element={<FacilityManagement />} />
@@ -77,9 +80,9 @@ function App() {
         <Contact />
         </main>
         <footer>
-          <div className='foot mt-[-2rem] sm:mt-0'>
+          <div className='foot'>
             <div className='container mx-auto flex flex-wrap justify-center sm:space-x-8 space-y-8 sm:space-y-0 pb-[75px] sm:pb-[120px] md:pb-[200px]'>
-              <a href='#vyzkouset-zdarma'><img src={vyzkouset} width={200} /></a>
+              <a href='#vyzkouset-zdarma'><img src={vyzkouset} width={200} className='w-[150px] translate-x-[-10%] sm:translate-x-0' /></a>
               <img src={dotace} width={300} />
             </div>
           </div>

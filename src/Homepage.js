@@ -7,7 +7,7 @@ import PictoMenu from './PictoMenu';
 function Homepage() {
   
   useEffect(() => {
-    document.title = 'Inovativní webová platforma 2D a 3D modelů | Drone Soft'
+    document.title = 'Drone Soft - Inovativní webová platforma 2D a 3D modelů'
   }, []);
 
   return (
