@@ -14,10 +14,10 @@ function Homepage() {
     <>
       {/*** HERO ***/}
       <section className='hero relative container mx-auto flex flex-wrap z-[3]'>
-        <div className='w-5/12 flex justify-center'>
-          <div className='color-green mt-12'>
+        <div className='w-full md:w-1/2 lg:w-5/12 flex justify-center'>
+          <div className='color-green mt-2 md:mb-20 lg:mt-12 lg:mb-0'>
             <span className='font-bold'>Dronesoft nabízí</span>
-            <h1 className='my-4'>
+            <h1 className='my-2 lg:my-4'>
               On-line<br/>
               přístup k 3D<br/>
               a 2D datům
@@ -25,8 +25,8 @@ function Homepage() {
             <p>Zajistěte si přístp k vašim datům odkudkoliv</p>
           </div>
         </div>
-        <div className='w-7/12'>
-          <a href='#vyzkousej-zdarma'><img src={laptop} className='w-[90%]' /></a>
+        <div className='md:w-1/2 lg:w-7/12'>
+          <a href='#vyzkousej-zdarma'><img src={laptop} className='w-[90%] mx-auto md:mx-0 mb-4 sm:mb-0' /></a>
         </div>
       </section>
 
@@ -46,7 +46,7 @@ function Homepage() {
       
       {/*** BANNER ***/}
       <section className='banner container mt-12 mx-auto'>
-        <img className='px-24' src={banner} width='100%' alt='Nemáme hranice' />
+        <img className='px-4 sm:px-8 md:px-16 lg:px-24' src={banner} width='100%' alt='Nemáme hranice' />
       </section>
 
     </>

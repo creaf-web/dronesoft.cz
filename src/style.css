@@ -77,6 +77,12 @@ body::after{
   padding: 1rem 4rem !important;
   background-color: var(--color-sand);
 }
+.menu .burger {
+  @apply hover:drop-shadow;
+  fill: var(--color-green); 
+  transition: .2s ease;
+}
+.menu .burger:hover {fill: #fff;}
 .menu nav ul li a {
   @apply hover:drop-shadow;
   display: block;
@@ -212,3 +218,37 @@ p{margin-bottom: 1rem;}
       max-width: 1280px;
   }
 }
+
+/***** MAX-WIDTH *****/
+
+@media (max-width: 1280px) {
+  h1 {font-size: 2.5rem; line-height: 2.75rem;}
+  h2 {font-size: 1.3rem; line-height: 1.65rem;}
+
+  .products .product {padding: 20px 8px 15px 8px;}
+  .products .product h3 {font-size: .8rem;}  
+}
+
+@media (max-width: 1024px) {
+  h1 {font-size: 2rem; line-height: 2.25rem;}
+}
+
+@media (max-width: 768px) {
+  #menu-wrapper {top: 20px; padding: 0 5px; z-index: 9;}
+  .menu {padding: 1rem 2rem !important;}
+  .menu .logo {width: 120px;}
+  .menu nav {max-height: 0px; overflow: hidden; transition: .3s ease-out;}
+  .menu.open nav {max-height: 120px;}
+  .menu nav ul li a {padding: 0.25rem; text-align: center;}
+}
+
+@media (max-width: 640px) {
+  body {font-size: .9rem;}
+  h1 {font-size: 2rem; line-height: 2.25rem;}
+  h2 {font-size: 1.2rem; line-height: 1.5rem;}
+
+  .menu .logo {width: 80px;}
+
+  .products .product h3 {font-size: .7rem;}  
+}
+
