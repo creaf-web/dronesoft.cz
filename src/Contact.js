@@ -15,11 +15,11 @@ function Contact() {
   }
 
   return (
-    <section className='contact-us container mx-auto my-16 px-24'>
+    <section className='contact-us container mx-auto my-16'>
         <a id='kontakt' className='relative top-[-140px] invisible'></a>
         <h3 className='text-center uppercase color-green text-lg mb-8'>Napište nám</h3>
         
-        <form method='post' onSubmit={submitForm}>
+        <form className='px-24' method='post' onSubmit={submitForm}>
             <div className='grid grid-cols-2 gap-x-12 gap-y-2'>
                 <div>
                     <input type='text' name='name' placeholder='jméno' value={name} onChange={(e) => setName(e.target.value)} />  

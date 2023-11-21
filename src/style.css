@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,7 +73,10 @@ body::after{
   @apply shadow-lg;
 }
 
-.menu {background-color: var(--color-sand);}
+.menu {
+  padding: 1rem 4rem !important;
+  background-color: var(--color-sand);
+}
 .menu nav ul li a {
   @apply hover:drop-shadow;
   display: block;
@@ -183,6 +187,7 @@ h2 {
   line-height: 2rem;
   font-weight: 700;
   color: var(--color-sand);
+  text-align: left;
   margin-bottom: 1rem;
 }
 
@@ -193,6 +198,10 @@ h3 {
   color: var(--color-green)
 }
 
+.container {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 p{margin-bottom: 1rem;}
 
 .color-green {color: var(--color-green);}

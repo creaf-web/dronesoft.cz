@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PictoMenu from './PictoMenu';
 
 function ZajmoveUzemi() {
   
@@ -7,25 +8,26 @@ function ZajmoveUzemi() {
   }, []);
 
   return (
-    
+    <>
     <section className='offpage container mx-auto'>
       <h1 className='relative z-[2] my-4'>Skutečný stav zájmového území</h1>
-      <div className='content-box p-24 py-16 rounded-[40px] after:rounded-[40px] inset-line line-orange'>
-        {/*<h2>Nebuďte pozadu a využijte moderní technologie pro správu venkovních prostor vašeho areálu. </h2>
-        <p>S ortofoto mapami z dronů dosáhnete vyšší efektivity, přesnosti a úspor.  Zabýváme se využitím ortofoto map a 3D modelů získaných pomocí dronů pro facility management venkovních prostor. Naše služby, které zahrnují snímání dat, jejich zpracování a zpřístupnění v online platformě, zásadním způsobem zlepšují efektivitu a přesnost správy průmyslových, obchodních, logistických areálů, což přináší mnoho výhod a úspor.</p>
-        
-        <h2>Plánování údržby a oprav díky ortofoto mapám můžete přesně identifikovat místa, kde je potřeba provádět údržbu a opravy</h2>
-        <p>Snadno zjistíte stav povrchů, střech, chodníků, zeleně atp. Podklady mohou také sloužit pro management výběrových řízení a poptávek. </p>
+      <div className='content-box mb-[-4rem] p-8 pb-20 sm:p-16 sm:pt-12 sm:pb-20 lg:px-24 text-justify rounded-[40px] after:rounded-[40px] inset-line line-orange'>
+        <h2>Je všeobecně známo, že po několika letech dochází ke ztrátě přesných údajů o stavu, rozmístění, případně montáží nových nebo demontáží starých technologických prvků na střechách objektů. </h2>
+        <p>Právě z tohoto důvodu nabízíme naši specializovanou službu. S našim produktem si můžete být jistí, že máte vždy k dispozici aktuální data, která vám pomohou v tom, jak nejlépe využít potenciál plochy střech například při návrhu fotovoltaické elektrárny nebo získat aktuální a přesné informace o stavu střechy, což je klíčové pro efektivní plánování údržby</p>
+        <p>Naše služba se zaměřuje na vytvoření skutečného stavu např. střechy pomocí moderní metody, která zahrnuje snímání z dronu a následnou tvorbu ortofoto plánu v přesném měřítku. Tento plán je poté pečlivě překreslen do formátu DWG, což umožňuje jeho snadné využití v běžném projekčním softwaru.</p>
+        <p>Do jednotlivých vrstev DWG souboru překreslíme půdorys stavební části, jímací soustavu (hromosvody), klimatizaci a vzduchotechniku, kanalizační vpusti, pochozí lávky atp. Z 3D modelu vygenerujeme příčné řezy reliéfu střechy budovy.</p>
+      </div>
 
-        <h2>Kontrola vegetace a zelených ploch</h2>
-        <p>Ortofoto mapy jsou skvělým nástrojem pro sledování zdraví stromů, trávníků a další vegetace. Přesným stanovením ploch a dojezdem můžete lépe organizovat práci a alokaci pracovní síly.</p>
-
-        <h2>Dokumentace změn</h2>
-        <p>Ortofoto mapy vytvářejí historický záznam vývoje areálu nebo lze jejich pomocí zaznamenat trasy vedení inženýrských sítí v době jejich pokládky a vyhnout se tak v budoucnu kolizím.</p>*/}
-
-        <p style={{ marginBottom: 0 }}>TODO ...</p>
+      <div className='relative mb-12 px-8 sm:px-16 z-[3] lg:px-24'>
+        <video width="100%" className="rounded-[40px] shadow-xl" controls>
+          <source src="/video/strecha.mp4#t=10" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
+
+    <PictoMenu />
+    </>
   )
 }
 
