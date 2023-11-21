@@ -256,6 +256,7 @@ p{margin-bottom: 1rem;}
   body::after {background-size: 210% auto; animation: gradient-animation 240s linear infinite}
 
   h1 {font-size: 2rem; line-height: 2.25rem;}
+  .offpage h1 {font-size: 1.5rem; line-height: 1.75rem; padding-left: 2rem; padding-right: 2rem;}
   h2 {font-size: 1.2rem; line-height: 1.5rem;}
 
   .menu .logo {width: 80px;}
