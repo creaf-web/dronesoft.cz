@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import video from './assets/video/facility-management.mp4'
 import PictoMenu from './PictoMenu';
 
 function FacilityManagement() {

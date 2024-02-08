@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import laptop from './assets/laptop.webp';
-import banner from './assets/no-borders.webp';
+import laptop from './assets/laptop_v2.webp';
+import banner from './assets/no-borders_v2.webp';
 import PictoMenu from './PictoMenu';
 
 function Homepage() {

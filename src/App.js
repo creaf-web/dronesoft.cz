@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './assets/logo.svg';
-import vyzkouset from './assets/vyzkouset-zdarma.svg';
+import vyzkouset from './assets/vyzkouset-zdarma_v2.svg';
 import dotace from './assets/dotace.svg';
 import Homepage from './Homepage';
 import FacilityManagement from './FacilityManagement';
@@ -12,6 +12,7 @@ import InspekceVyskovychStaveb from './InspekceVyskovychStaveb';
 import Pasportizace from './Pasportizace';
 import FotovoltaickeElektrarny from './FotovoltaickeElektrarny';
 import ZaznamyPodklady from './ZaznamyPodklady';
+import Dotace from './Dotace';
 import { HiBars3BottomRight } from "react-icons/hi2";
 
 function App() {
@@ -35,16 +36,23 @@ function App() {
   useEffect(() => {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       document.getElementById('menu-wrapper').classList.add('to-front');
+      document.getElementById('content-overlay').classList.add('show');
     }
     
     window.onscroll = function(){
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) document.getElementById('menu-wrapper').classList.add('to-front');
-      else document.getElementById('menu-wrapper').classList.remove('to-front');
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20){
+        document.getElementById('menu-wrapper').classList.add('to-front');
+        document.getElementById('content-overlay').classList.add('show');
+      }else{ 
+        document.getElementById('menu-wrapper').classList.remove('to-front');
+        document.getElementById('content-overlay').classList.remove('show');
+      }
     };
   }, []);
 
   return (
     <Router>
+        <div id="content-overlay" className='content-overlay'></div>
         <div id='menu-wrapper' className='fixed w-full flex justify-center'>
           <div id='menu' className='relative menu container mx-auto py-4 rounded-[40px] after:rounded-[40px] inset-line flex flex-wrap'>
             <div className='w-full sm:w-1/4'>
@@ -52,8 +60,8 @@ function App() {
             </div>
             
               <nav className='w-full md:w-3/4 md:flex items-center justify-end'>
-                <ul className='md:flex mt-4 md:mt-0'>
-                  <li><a href="/#vyzkousej-zdarma" onClick={closeMenu}>Vyzkoušej zdarma</a></li>
+                <ul className='md:flex items-center mt-4 md:mt-0'>
+                  <li><a href="/#vyzkousej-zdarma" onClick={closeMenu} className='inline-block rounded-xl bg-[#051f1f] !text-[#f2ab87] hover:!text-white !py-1'>Vyzkoušej zdarma</a></li>
                   <li><a href="#produkty" onClick={closeMenu}>Produkty</a></li>
                   <li><a href="#kontakt" onClick={closeMenu}>Kontakt</a></li>
                 </ul>
@@ -76,6 +84,7 @@ function App() {
           <Route path="/pasportizace" element={<Pasportizace />} />
           <Route path="/fotovoltaicke-elektrarny" element={<FotovoltaickeElektrarny />} />
           <Route path="/zaznamy-podklady" element={<ZaznamyPodklady />} />
+          <Route path="/nejsme-prijemci-dotaci" element={<Dotace />} />
         </Routes>
         <Contact />
         </main>
@@ -83,7 +92,7 @@ function App() {
           <div className='foot'>
             <div className='container mx-auto flex flex-wrap justify-center sm:space-x-8 space-y-8 sm:space-y-0 pb-[75px] sm:pb-[120px] md:pb-[200px]'>
               <a href='#vyzkouset-zdarma'><img src={vyzkouset} width={200} className='w-[150px] translate-x-[-10%] sm:translate-x-0' /></a>
-              <img src={dotace} width={300} />
+              <a href='/nejsme-prijemci-dotaci'><img src={dotace} width={300} /></a>
             </div>
           </div>
           <div className='powered-by'>
