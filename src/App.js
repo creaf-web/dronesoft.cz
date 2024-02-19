@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './assets/logo.svg';
 import vyzkouset from './assets/vyzkouset-zdarma_v2.svg';
+import arrow from './assets/menu-arrow.svg';
 import dotace from './assets/dotace.svg';
 import Homepage from './Homepage';
 import FacilityManagement from './FacilityManagement';
@@ -61,7 +62,10 @@ function App() {
             
               <nav className='w-full md:w-3/4 md:flex items-center justify-end'>
                 <ul className='md:flex items-center mt-4 md:mt-0'>
-                  <li><a href="/#vyzkousej-zdarma" onClick={closeMenu} className='inline-block rounded-xl bg-[#051f1f] !text-[#f2ab87] hover:!text-white !py-1'>Vyzkoušej zdarma</a></li>
+                  <li className='relative'>
+                    <a href="/#vyzkousej-zdarma" onClick={closeMenu} className='inline-block rounded-xl bg-[#051f1f] !text-[#f2ab87] hover:!text-white !py-1'>Vyzkoušej zdarma</a>
+                    <img src={arrow} width={70} className='hidden md:block absolute bottom-[-45px] left-[25%] z-[1] pointer-events-none select-none' />
+                  </li>
                   <li><a href="#produkty" onClick={closeMenu}>Produkty</a></li>
                   <li><a href="#kontakt" onClick={closeMenu}>Kontakt</a></li>
                 </ul>
