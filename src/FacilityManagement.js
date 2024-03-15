@@ -29,7 +29,7 @@ function FacilityManagement() {
 
       <div className='relative mb-12 px-8 sm:px-16 z-[3] lg:px-24'>
         <video width="100%" className="rounded-[40px] shadow-xl" controls>
-          <source src="/video/facility-management.mp4#t=10" type="video/mp4" />
+          <source src="/video/facility-management_v2.mp4#t=10" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
